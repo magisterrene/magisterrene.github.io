@@ -1,170 +1,211 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>René Graap | Game Developer Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
 
-        body {
-            background: #0f172a;
-            color: white;
-            line-height: 1.6;
-        }
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
 
-        header {
-            background: #020617;
-            padding: 20px;
-            position: sticky;
-            top: 0;
-        }
+header{
+background:#020617;
+padding:20px;
+position:sticky;
+top:0;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1000px;
-            margin: auto;
-        }
+nav{
+display:flex;
+justify-content:space-between;
+max-width:1100px;
+margin:auto;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
 
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-        }
+.hero{
+text-align:center;
+padding:100px 20px;
+}
 
-        .hero h1 {
-            font-size: 3rem;
-        }
+.hero h1{
+font-size:3rem;
+}
 
-        .hero p {
-            color: #94a3b8;
-            margin-top: 10px;
-        }
+.hero p{
+color:#94a3b8;
+margin-top:10px;
+}
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+section{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
 
-        h2 {
-            margin-bottom: 20px;
-        }
+h2{
+margin-bottom:25px;
+}
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
 
-        .card {
-            background: #020617;
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+.card{
+background:#020617;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+border:1px solid #1e293b;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.card:hover{
+transform:translateY(-6px);
+border-color:#38bdf8;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #020617;
-            margin-top: 40px;
-        }
+.card h3{
+margin-bottom:10px;
+color:#38bdf8;
+}
 
-        button {
-            margin-top: 20px;
-            padding: 12px 20px;
-            border: none;
-            background: #38bdf8;
-            color: black;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-    </style>
+.skills span{
+display:inline-block;
+background:#1e293b;
+padding:8px 14px;
+margin:6px;
+border-radius:6px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#020617;
+margin-top:40px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <h3>Mein Portfolio</h3>
-        <div>
-            <a href="#about">Über mich</a>
-            <a href="#projects">Projekte</a>
-            <a href="#contact">Kontakt</a>
-        </div>
-    </nav>
+<nav>
+<h3>René Graap</h3>
+<div>
+<a href="#about">Über mich</a>
+<a href="#projects">Projekte</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Kontakt</a>
+</div>
+</nav>
 </header>
 
 <section class="hero">
-    <h1>Hi, ich bin [Dein Name]</h1>
-    <p>Developer • Gamer • Creator</p>
-    <button onclick="scrollToProjects()">Meine Projekte</button>
+<h1>Game Developer & Computer Games Technology Student</h1>
+<p>Gameplay • Simulation • Procedural Generation • VR</p>
 </section>
 
 <section id="about">
-    <h2>Über mich</h2>
-    <p>
-        Ich bin ein Entwickler mit Interesse an Webentwicklung,
-        Gaming und neuen Technologien. Hier findest du meine Projekte
-        und Arbeiten.
-    </p>
+<h2>Über mich</h2>
+<p>
+Ich bin Student im Studiengang <strong>Computer Games Technology</strong>
+an der Fachhochschule Wedel (Bachelor geplant 2026).
+Im Rahmen meines Studiums habe ich mehrere Spiele und interaktive Anwendungen
+entwickelt und dabei praktische Erfahrung im gesamten Entwicklungsprozess
+gesammelt – von Programmierung über Game Design bis zur Asset-Erstellung.
+</p>
+
+<br>
+
+<p>
+Mein Schwerpunkt liegt auf Gameplay-Programmierung,
+Simulationen und prozedural generierten Systemen.
+Aktuell suche ich Möglichkeiten, meine Fähigkeiten als Praktikant
+weiter auszubauen und aktiv an professionellen Projekten mitzuwirken.
+</p>
 </section>
 
 <section id="projects">
-    <h2>Projekte</h2>
+<h2>Projekte</h2>
 
-    <div class="projects">
-        <div class="card">
-            <h3>Projekt 1</h3>
-            <p>Beschreibung deines Projekts.</p>
-        </div>
+<div class="projects">
 
-        <div class="card">
-            <h3>Projekt 2</h3>
-            <p>Beschreibung deines Projekts.</p>
-        </div>
+<div class="card">
+<h3>Projekt Neon</h3>
+<p>2,5D Platformer mit Fokus auf Movement, Leveldesign und Gameplay-Mechaniken.</p>
+</div>
 
-        <div class="card">
-            <h3>Projekt 3</h3>
-            <p>Beschreibung deines Projekts.</p>
-        </div>
-    </div>
+<div class="card">
+<h3>Panzersimulator</h3>
+<p>VR-Simulation zur Bedienung eines Tiger-Panzers aus dem Zweiten Weltkrieg.</p>
+</div>
+
+<div class="card">
+<h3>Hase und Igel</h3>
+<p>Digitale Umsetzung des Brettspiels inklusive Spielsystem-Logik.</p>
+</div>
+
+<div class="card">
+<h3>Floodpipe</h3>
+<p>Puzzle-Spiel mit prozedural generierter Spielfeld-Erzeugung.</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skills">
+<span>Java</span>
+<span>C / C++</span>
+<span>Unreal Engine</span>
+<span>Blender</span>
+<span>Photoshop</span>
+<span>Objektorientierte Programmierung</span>
+<span>Game Development</span>
+<span>VR Development</span>
+</div>
+
 </section>
 
 <section id="contact">
-    <h2>Kontakt</h2>
-    <p>Email: deine@email.de</p>
-    <p>GitHub: github.com/deinname</p>
+<h2>Kontakt</h2>
+
+<p>📧 rene.graap@gmx.de</p>
+<p>📱 +49 176 34891802</p>
+<p>🌍 Deutschland</p>
+
+<br>
+
+<p>
+Deutsch: Muttersprache<br>
+Englisch: Sehr gute Kenntnisse
+</p>
+
 </section>
 
 <footer>
-    <p>© 2026 Dein Name</p>
+<p>© 2026 René Graap</p>
 </footer>
-
-<script>
-function scrollToProjects() {
-    document.getElementById("projects")
-        .scrollIntoView({ behavior: "smooth" });
-}
-</script>
 
 </body>
 </html>
