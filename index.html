@@ -3,36 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Website</title>
+    <title>Mein Portfolio</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #020617;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #020617;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #020617;
+            margin-top: 40px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            background: #38bdf8;
+            color: black;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Meine GitHub Page</h1>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Projekte</a>
-        <a href="#">Kontakt</a>
+        <h3>Mein Portfolio</h3>
+        <div>
+            <a href="#about">Über mich</a>
+            <a href="#projects">Projekte</a>
+            <a href="#contact">Kontakt</a>
+        </div>
     </nav>
 </header>
 
-<main>
-    <section>
-        <h2>Willkommen</h2>
-        <p>Diese Seite läuft über GitHub Pages.</p>
-    </section>
-</main>
+<section class="hero">
+    <h1>Hi, ich bin [Dein Name]</h1>
+    <p>Developer • Gamer • Creator</p>
+    <button onclick="scrollToProjects()">Meine Projekte</button>
+</section>
+
+<section id="about">
+    <h2>Über mich</h2>
+    <p>
+        Ich bin ein Entwickler mit Interesse an Webentwicklung,
+        Gaming und neuen Technologien. Hier findest du meine Projekte
+        und Arbeiten.
+    </p>
+</section>
+
+<section id="projects">
+    <h2>Projekte</h2>
+
+    <div class="projects">
+        <div class="card">
+            <h3>Projekt 1</h3>
+            <p>Beschreibung deines Projekts.</p>
+        </div>
+
+        <div class="card">
+            <h3>Projekt 2</h3>
+            <p>Beschreibung deines Projekts.</p>
+        </div>
+
+        <div class="card">
+            <h3>Projekt 3</h3>
+            <p>Beschreibung deines Projekts.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Kontakt</h2>
+    <p>Email: deine@email.de</p>
+    <p>GitHub: github.com/deinname</p>
+</section>
 
 <footer>
-    <p>© 2026 Mein Name</p>
+    <p>© 2026 Dein Name</p>
 </footer>
 
-<!-- JavaScript -->
-<script src="script.js"></script>
+<script>
+function scrollToProjects() {
+    document.getElementById("projects")
+        .scrollIntoView({ behavior: "smooth" });
+}
+</script>
 
 </body>
 </html>
