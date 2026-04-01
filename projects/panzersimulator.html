@@ -17,7 +17,54 @@ margin:4px;
 display:inline-block;
 border-radius:6px;
 }
+/* SCREENSHOT GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.lightbox.active{
+display:flex;
+}
 </style>
+
+<img src="../images/tank1.jpg">
+<img src="../images/tank2.jpg">
+<img src="../images/tank3.jpg">
 
 </head>
 
@@ -48,6 +95,16 @@ Almost all of the interoir of the tank was modelled by me and my partner.
 <li>Bug Fixing</li>
 </ul>
 
+<h2>Screenshots</h2>
+
+<div class="gallery">
+
+<img src="../images/tank1.jpg" onclick="openLightbox(this.src)">
+<img src="../images/tank2.jpg" onclick="openLightbox(this.src)">
+<img src="../images/tank3.jpg" onclick="openLightbox(this.src)">
+
+</div>
+
 <h2>Technologies</h2>
 <div class="tech">
 <span>Unreal Engine</span>
@@ -60,6 +117,23 @@ Almost all of the interoir of the tank was modelled by me and my partner.
 <a href="https://github.com/magisterrene/Panzersimulator">GitHub Repository</a><br>
 <a href="https://drive.google.com/file/d/1eq-wi1N2fiXmWv_C1PdeAoO6zeQWqZSz/view?usp=sharing">Demo (packed)</a>
 </p>
+
+<script>
+function openLightbox(src){
+const lightbox=document.getElementById("lightbox");
+const img=document.getElementById("lightbox-img");
+img.src=src;
+lightbox.classList.add("active");
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").classList.remove("active");
+}
+</script>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
 
 </body>
 </html>
