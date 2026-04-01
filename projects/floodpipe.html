@@ -17,6 +17,50 @@ margin:4px;
 display:inline-block;
 border-radius:6px;
 }
+/* SCREENSHOT GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.lightbox.active{
+display:flex;
+}
+
 </style>
 
 </head>
@@ -37,6 +81,17 @@ The focus was therefore on level generation using various settings.
 To solve this as elegantly as possible, I used the wave function collapse.
 </p>
 
+<h2>Screenshots</h2>
+
+<div class="gallery">
+
+<img src="../images/floodpipe1.jpg" onclick="openLightbox(this.src)">
+<img src="../images/floodpipe2.jpg" onclick="openLightbox(this.src)">
+<img src="../images/floodpipe3.jpg" onclick="openLightbox(this.src)">
+<img src="../images/floodpipe4.jpg" onclick="openLightbox(this.src)">
+
+</div>
+
 <h2>Technologies</h2>
 <div class="tech">
 <span>Procedural Generation</span>
@@ -48,6 +103,23 @@ To solve this as elegantly as possible, I used the wave function collapse.
 <p>
 <a href="https://github.com/magisterrene/Floodpipe">GitHub Repository</a>
 </p>
+
+<script>
+function openLightbox(src){
+const lightbox=document.getElementById("lightbox");
+const img=document.getElementById("lightbox-img");
+img.src=src;
+lightbox.classList.add("active");
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").classList.remove("active");
+}
+</script>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
 
 </body>
 </html>

@@ -17,6 +17,50 @@ margin:4px;
 display:inline-block;
 border-radius:6px;
 }
+/* SCREENSHOT GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.lightbox.active{
+display:flex;
+}
+
 </style>
 
 </head>
@@ -35,6 +79,17 @@ A solo project to create a digital version of the classic board game “Hase und
 The focus was on the rules of the game, the resulting logic systems and player interaction.
 </p>
 
+<h2>Screenshots</h2>
+
+<div class="gallery">
+
+<img src="../images/hi1.jpg" onclick="openLightbox(this.src)">
+<img src="../images/hi2.jpg" onclick="openLightbox(this.src)">
+<img src="../images/hi3.jpg" onclick="openLightbox(this.src)">
+<img src="../images/hi4.jpg" onclick="openLightbox(this.src)">
+
+</div>
+
 <h2>Technologies</h2>
 <div class="tech">
 <span>Game Logic</span>
@@ -46,6 +101,23 @@ The focus was on the rules of the game, the resulting logic systems and player i
 <p>
 <a href="https://github.com/magisterrene/Hase-und-Igel">GitHub Repository</a>
 </p>
+
+<script>
+function openLightbox(src){
+const lightbox=document.getElementById("lightbox");
+const img=document.getElementById("lightbox-img");
+img.src=src;
+lightbox.classList.add("active");
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").classList.remove("active");
+}
+</script>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
 
 </body>
 </html>
