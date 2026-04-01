@@ -24,6 +24,50 @@ margin:4px;
 display:inline-block;
 border-radius:6px;
 }
+/* SCREENSHOT GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.lightbox.active{
+display:flex;
+}
+
 </style>
 
 </head>
@@ -44,13 +88,24 @@ The aim is to complete the levels as quickly as possible.
 There are various techniques you can use to beat your own record time. 
 </p>
 
-<h2>Meine Aufgaben</h2>
+<h2>My Tasks</h2>
 <ul>
 <li>Gameplay Programming</li>
 <li>Implementing basic Movement</li>
 <li>Leveldesign</li>
 <li>Implementing the Timer</li>
 </ul>
+
+<h2>Screenshots</h2>
+
+<div class="gallery">
+
+<img src="../images/neon1.jpg" onclick="openLightbox(this.src)">
+<img src="../images/neon2.jpg" onclick="openLightbox(this.src)">
+<img src="../images/neon3.jpg" onclick="openLightbox(this.src)">
+<img src="../images/neon4.jpg" onclick="openLightbox(this.src)">
+
+</div>
 
 <h2>Technologies</h2>
 <div class="tech">
@@ -64,6 +119,23 @@ There are various techniques you can use to beat your own record time.
 <a href="https://github.com/magisterrene/Project-Neon">GitHub Repository</a><br>
 <a href="https://drive.google.com/file/d/12SWgRdQrsxlYbyiRC2L27-1rjzYQ8STW/view?usp=sharing">Demo (gepackt)</a>
 </p>
+
+<script>
+function openLightbox(src){
+const lightbox=document.getElementById("lightbox");
+const img=document.getElementById("lightbox-img");
+img.src=src;
+lightbox.classList.add("active");
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").classList.remove("active");
+}
+</script>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
 
 </body>
 </html>
